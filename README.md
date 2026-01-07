@@ -2,7 +2,7 @@
 High-performance C++ log and telemetry analysis CLI tool
 
 ## Overview
-A C++20 utility designed to parse and analyze multi-gigabyte simulation logs 
+A C++ CLI tool designed to parse and analyze multi-gigabyte simulation logs 
 produced by EDA tools. Focused on zero-copy parsing and high-throughput data aggregation.
 
 ## Technical Goals
