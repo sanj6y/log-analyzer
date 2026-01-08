@@ -12,9 +12,12 @@ endif()
 # Add executable
 add_executable(log-analyzer
     apps/main.cpp
+    src/analytics/log_aggregator.cpp
+    src/analytics/thread_safe_aggregator.cpp
     src/parser/log_parser.cpp
     src/utils/memory_pool.cpp
     src/utils/streaming_reader.cpp
+    src/utils/thread_safe_queue.cpp
 )
 
 # Include directories

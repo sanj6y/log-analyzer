@@ -86,10 +86,38 @@ CMakeFiles/log-analyzer.dir/apps/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/log-analyzer.dir/apps/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sanjaychandrasekar/Code/Github/log-analyzer/apps/main.cpp -o CMakeFiles/log-analyzer.dir/apps/main.cpp.s
 
+CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o: CMakeFiles/log-analyzer.dir/flags.make
+CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o: /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/log_aggregator.cpp
+CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o: CMakeFiles/log-analyzer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o -MF CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o.d -o CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o -c /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/log_aggregator.cpp
+
+CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/log_aggregator.cpp > CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.i
+
+CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/log_aggregator.cpp -o CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.s
+
+CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o: CMakeFiles/log-analyzer.dir/flags.make
+CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o: /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/thread_safe_aggregator.cpp
+CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o: CMakeFiles/log-analyzer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o -MF CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o.d -o CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o -c /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/thread_safe_aggregator.cpp
+
+CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/thread_safe_aggregator.cpp > CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.i
+
+CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/analytics/thread_safe_aggregator.cpp -o CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.s
+
 CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o: CMakeFiles/log-analyzer.dir/flags.make
 CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o: /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/parser/log_parser.cpp
 CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o: CMakeFiles/log-analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o -MF CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o.d -o CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o -c /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/parser/log_parser.cpp
 
 CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.i: cmake_force
@@ -103,7 +131,7 @@ CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.s: cmake_force
 CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o: CMakeFiles/log-analyzer.dir/flags.make
 CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o: /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/memory_pool.cpp
 CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o: CMakeFiles/log-analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o -MF CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o.d -o CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o -c /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/memory_pool.cpp
 
 CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.i: cmake_force
@@ -117,7 +145,7 @@ CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.s: cmake_force
 CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o: CMakeFiles/log-analyzer.dir/flags.make
 CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o: /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/streaming_reader.cpp
 CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o: CMakeFiles/log-analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o -MF CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o.d -o CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o -c /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/streaming_reader.cpp
 
 CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.i: cmake_force
@@ -128,23 +156,43 @@ CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/streaming_reader.cpp -o CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.s
 
+CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o: CMakeFiles/log-analyzer.dir/flags.make
+CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o: /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/thread_safe_queue.cpp
+CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o: CMakeFiles/log-analyzer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o -MF CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o.d -o CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o -c /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/thread_safe_queue.cpp
+
+CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/thread_safe_queue.cpp > CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.i
+
+CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sanjaychandrasekar/Code/Github/log-analyzer/src/utils/thread_safe_queue.cpp -o CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.s
+
 # Object files for target log-analyzer
 log__analyzer_OBJECTS = \
 "CMakeFiles/log-analyzer.dir/apps/main.cpp.o" \
+"CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o" \
+"CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o" \
 "CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o" \
 "CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o" \
-"CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o"
+"CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o" \
+"CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o"
 
 # External object files for target log-analyzer
 log__analyzer_EXTERNAL_OBJECTS =
 
 log-analyzer: CMakeFiles/log-analyzer.dir/apps/main.cpp.o
+log-analyzer: CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o
+log-analyzer: CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o
 log-analyzer: CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o
 log-analyzer: CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o
 log-analyzer: CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o
+log-analyzer: CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o
 log-analyzer: CMakeFiles/log-analyzer.dir/build.make
 log-analyzer: CMakeFiles/log-analyzer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable log-analyzer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sanjaychandrasekar/Code/Github/log-analyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable log-analyzer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/log-analyzer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

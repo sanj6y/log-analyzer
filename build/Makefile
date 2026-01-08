@@ -153,6 +153,54 @@ apps/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/apps/main.cpp.s
 .PHONY : apps/main.cpp.s
 
+src/analytics/log_aggregator.o: src/analytics/log_aggregator.cpp.o
+.PHONY : src/analytics/log_aggregator.o
+
+# target to build an object file
+src/analytics/log_aggregator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o
+.PHONY : src/analytics/log_aggregator.cpp.o
+
+src/analytics/log_aggregator.i: src/analytics/log_aggregator.cpp.i
+.PHONY : src/analytics/log_aggregator.i
+
+# target to preprocess a source file
+src/analytics/log_aggregator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.i
+.PHONY : src/analytics/log_aggregator.cpp.i
+
+src/analytics/log_aggregator.s: src/analytics/log_aggregator.cpp.s
+.PHONY : src/analytics/log_aggregator.s
+
+# target to generate assembly for a file
+src/analytics/log_aggregator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.s
+.PHONY : src/analytics/log_aggregator.cpp.s
+
+src/analytics/thread_safe_aggregator.o: src/analytics/thread_safe_aggregator.cpp.o
+.PHONY : src/analytics/thread_safe_aggregator.o
+
+# target to build an object file
+src/analytics/thread_safe_aggregator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o
+.PHONY : src/analytics/thread_safe_aggregator.cpp.o
+
+src/analytics/thread_safe_aggregator.i: src/analytics/thread_safe_aggregator.cpp.i
+.PHONY : src/analytics/thread_safe_aggregator.i
+
+# target to preprocess a source file
+src/analytics/thread_safe_aggregator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.i
+.PHONY : src/analytics/thread_safe_aggregator.cpp.i
+
+src/analytics/thread_safe_aggregator.s: src/analytics/thread_safe_aggregator.cpp.s
+.PHONY : src/analytics/thread_safe_aggregator.s
+
+# target to generate assembly for a file
+src/analytics/thread_safe_aggregator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.s
+.PHONY : src/analytics/thread_safe_aggregator.cpp.s
+
 src/parser/log_parser.o: src/parser/log_parser.cpp.o
 .PHONY : src/parser/log_parser.o
 
@@ -225,6 +273,30 @@ src/utils/streaming_reader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.s
 .PHONY : src/utils/streaming_reader.cpp.s
 
+src/utils/thread_safe_queue.o: src/utils/thread_safe_queue.cpp.o
+.PHONY : src/utils/thread_safe_queue.o
+
+# target to build an object file
+src/utils/thread_safe_queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o
+.PHONY : src/utils/thread_safe_queue.cpp.o
+
+src/utils/thread_safe_queue.i: src/utils/thread_safe_queue.cpp.i
+.PHONY : src/utils/thread_safe_queue.i
+
+# target to preprocess a source file
+src/utils/thread_safe_queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.i
+.PHONY : src/utils/thread_safe_queue.cpp.i
+
+src/utils/thread_safe_queue.s: src/utils/thread_safe_queue.cpp.s
+.PHONY : src/utils/thread_safe_queue.s
+
+# target to generate assembly for a file
+src/utils/thread_safe_queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.s
+.PHONY : src/utils/thread_safe_queue.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -237,6 +309,12 @@ help:
 	@echo "... apps/main.o"
 	@echo "... apps/main.i"
 	@echo "... apps/main.s"
+	@echo "... src/analytics/log_aggregator.o"
+	@echo "... src/analytics/log_aggregator.i"
+	@echo "... src/analytics/log_aggregator.s"
+	@echo "... src/analytics/thread_safe_aggregator.o"
+	@echo "... src/analytics/thread_safe_aggregator.i"
+	@echo "... src/analytics/thread_safe_aggregator.s"
 	@echo "... src/parser/log_parser.o"
 	@echo "... src/parser/log_parser.i"
 	@echo "... src/parser/log_parser.s"
@@ -246,6 +324,9 @@ help:
 	@echo "... src/utils/streaming_reader.o"
 	@echo "... src/utils/streaming_reader.i"
 	@echo "... src/utils/streaming_reader.s"
+	@echo "... src/utils/thread_safe_queue.o"
+	@echo "... src/utils/thread_safe_queue.i"
+	@echo "... src/utils/thread_safe_queue.s"
 .PHONY : help
 
 
