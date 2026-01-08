@@ -66,7 +66,7 @@
 ```bash
 # Test with larger buffer
 ./build/log-analyzer data/sample.log --buffer-size 2097152
-# Should process faster (larger buffer = fewer I/O operations)
+# Should process faster b/c (larger buffer = fewer I/O operations)
 ```
 
 ### Test 5: Verify Zero-Copy Performance
