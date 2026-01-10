@@ -174,13 +174,12 @@ log-analyzer/
 
 ## Roadmap
 
-- ✅ Part 1: Core streaming engine and basic `string_view` parser
-- ✅ Part 2: Aggregator engine (Error/Warning frequency, Time-window analysis)
-- ✅ Part 3: Multi-threading with `std::jthread` and thread-safe queues
-- ⏸️ Part 4: Integration of GoogleTest for unit testing (Part 4.1 in progress)
-- 📋 Part 5: Benchmarking suite vs. standard `regex` approaches
+- Part 1: Core streaming engine and basic `string_view` parser
+- Part 2: Aggregator engine (Error/Warning frequency, Time-window analysis)
+- Part 3: Multi-threading with `std::jthread` and thread-safe queues
+- Part 4: Integration of GoogleTest for unit testing (IN PROGRESS)
 
-## Installation (Optional)
+## Installation
 
 To use `loganalyze` from anywhere:
 
@@ -191,7 +190,3 @@ sudo cp build/loganalyze /usr/local/bin/
 # Or add build directory to PATH
 export PATH="$PATH:$(pwd)/build"
 ```
-
-## License
-
-See LICENSE file for details.
