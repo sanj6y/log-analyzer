@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /Users/sanjaychandrasekar/Code/Github/log-analyzer/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -94,51 +84,6 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -172,89 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named log-analyzer
+# Target rules for targets named loganalyze
 
 # Build rule for target.
-log-analyzer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 log-analyzer
-.PHONY : log-analyzer
+loganalyze: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 loganalyze
+.PHONY : loganalyze
 
 # fast build rule for target.
-log-analyzer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/build
-.PHONY : log-analyzer/fast
-
-#=============================================================================
-# Target rules for targets named log-analyzer-tests
-
-# Build rule for target.
-log-analyzer-tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 log-analyzer-tests
-.PHONY : log-analyzer-tests
-
-# fast build rule for target.
-log-analyzer-tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/build
-.PHONY : log-analyzer-tests/fast
-
-#=============================================================================
-# Target rules for targets named gmock
-
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
-
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
+loganalyze/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/build
+.PHONY : loganalyze/fast
 
 apps/main.o: apps/main.cpp.o
 .PHONY : apps/main.o
 
 # target to build an object file
 apps/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/apps/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/apps/main.cpp.o
 .PHONY : apps/main.cpp.o
 
 apps/main.i: apps/main.cpp.i
@@ -262,7 +142,7 @@ apps/main.i: apps/main.cpp.i
 
 # target to preprocess a source file
 apps/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/apps/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/apps/main.cpp.i
 .PHONY : apps/main.cpp.i
 
 apps/main.s: apps/main.cpp.s
@@ -270,7 +150,7 @@ apps/main.s: apps/main.cpp.s
 
 # target to generate assembly for a file
 apps/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/apps/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/apps/main.cpp.s
 .PHONY : apps/main.cpp.s
 
 src/analytics/log_aggregator.o: src/analytics/log_aggregator.cpp.o
@@ -278,8 +158,7 @@ src/analytics/log_aggregator.o: src/analytics/log_aggregator.cpp.o
 
 # target to build an object file
 src/analytics/log_aggregator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/analytics/log_aggregator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/analytics/log_aggregator.cpp.o
 .PHONY : src/analytics/log_aggregator.cpp.o
 
 src/analytics/log_aggregator.i: src/analytics/log_aggregator.cpp.i
@@ -287,8 +166,7 @@ src/analytics/log_aggregator.i: src/analytics/log_aggregator.cpp.i
 
 # target to preprocess a source file
 src/analytics/log_aggregator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/analytics/log_aggregator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/analytics/log_aggregator.cpp.i
 .PHONY : src/analytics/log_aggregator.cpp.i
 
 src/analytics/log_aggregator.s: src/analytics/log_aggregator.cpp.s
@@ -296,8 +174,7 @@ src/analytics/log_aggregator.s: src/analytics/log_aggregator.cpp.s
 
 # target to generate assembly for a file
 src/analytics/log_aggregator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/log_aggregator.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/analytics/log_aggregator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/analytics/log_aggregator.cpp.s
 .PHONY : src/analytics/log_aggregator.cpp.s
 
 src/analytics/thread_safe_aggregator.o: src/analytics/thread_safe_aggregator.cpp.o
@@ -305,7 +182,7 @@ src/analytics/thread_safe_aggregator.o: src/analytics/thread_safe_aggregator.cpp
 
 # target to build an object file
 src/analytics/thread_safe_aggregator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/analytics/thread_safe_aggregator.cpp.o
 .PHONY : src/analytics/thread_safe_aggregator.cpp.o
 
 src/analytics/thread_safe_aggregator.i: src/analytics/thread_safe_aggregator.cpp.i
@@ -313,7 +190,7 @@ src/analytics/thread_safe_aggregator.i: src/analytics/thread_safe_aggregator.cpp
 
 # target to preprocess a source file
 src/analytics/thread_safe_aggregator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/analytics/thread_safe_aggregator.cpp.i
 .PHONY : src/analytics/thread_safe_aggregator.cpp.i
 
 src/analytics/thread_safe_aggregator.s: src/analytics/thread_safe_aggregator.cpp.s
@@ -321,7 +198,7 @@ src/analytics/thread_safe_aggregator.s: src/analytics/thread_safe_aggregator.cpp
 
 # target to generate assembly for a file
 src/analytics/thread_safe_aggregator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/analytics/thread_safe_aggregator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/analytics/thread_safe_aggregator.cpp.s
 .PHONY : src/analytics/thread_safe_aggregator.cpp.s
 
 src/parser/log_parser.o: src/parser/log_parser.cpp.o
@@ -329,8 +206,7 @@ src/parser/log_parser.o: src/parser/log_parser.cpp.o
 
 # target to build an object file
 src/parser/log_parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/parser/log_parser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/parser/log_parser.cpp.o
 .PHONY : src/parser/log_parser.cpp.o
 
 src/parser/log_parser.i: src/parser/log_parser.cpp.i
@@ -338,8 +214,7 @@ src/parser/log_parser.i: src/parser/log_parser.cpp.i
 
 # target to preprocess a source file
 src/parser/log_parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/parser/log_parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/parser/log_parser.cpp.i
 .PHONY : src/parser/log_parser.cpp.i
 
 src/parser/log_parser.s: src/parser/log_parser.cpp.s
@@ -347,16 +222,39 @@ src/parser/log_parser.s: src/parser/log_parser.cpp.s
 
 # target to generate assembly for a file
 src/parser/log_parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/parser/log_parser.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/parser/log_parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/parser/log_parser.cpp.s
 .PHONY : src/parser/log_parser.cpp.s
+
+src/utils/json_output.o: src/utils/json_output.cpp.o
+.PHONY : src/utils/json_output.o
+
+# target to build an object file
+src/utils/json_output.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/json_output.cpp.o
+.PHONY : src/utils/json_output.cpp.o
+
+src/utils/json_output.i: src/utils/json_output.cpp.i
+.PHONY : src/utils/json_output.i
+
+# target to preprocess a source file
+src/utils/json_output.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/json_output.cpp.i
+.PHONY : src/utils/json_output.cpp.i
+
+src/utils/json_output.s: src/utils/json_output.cpp.s
+.PHONY : src/utils/json_output.s
+
+# target to generate assembly for a file
+src/utils/json_output.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/json_output.cpp.s
+.PHONY : src/utils/json_output.cpp.s
 
 src/utils/memory_pool.o: src/utils/memory_pool.cpp.o
 .PHONY : src/utils/memory_pool.o
 
 # target to build an object file
 src/utils/memory_pool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/memory_pool.cpp.o
 .PHONY : src/utils/memory_pool.cpp.o
 
 src/utils/memory_pool.i: src/utils/memory_pool.cpp.i
@@ -364,7 +262,7 @@ src/utils/memory_pool.i: src/utils/memory_pool.cpp.i
 
 # target to preprocess a source file
 src/utils/memory_pool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/memory_pool.cpp.i
 .PHONY : src/utils/memory_pool.cpp.i
 
 src/utils/memory_pool.s: src/utils/memory_pool.cpp.s
@@ -372,7 +270,7 @@ src/utils/memory_pool.s: src/utils/memory_pool.cpp.s
 
 # target to generate assembly for a file
 src/utils/memory_pool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/memory_pool.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/memory_pool.cpp.s
 .PHONY : src/utils/memory_pool.cpp.s
 
 src/utils/streaming_reader.o: src/utils/streaming_reader.cpp.o
@@ -380,8 +278,7 @@ src/utils/streaming_reader.o: src/utils/streaming_reader.cpp.o
 
 # target to build an object file
 src/utils/streaming_reader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/utils/streaming_reader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/streaming_reader.cpp.o
 .PHONY : src/utils/streaming_reader.cpp.o
 
 src/utils/streaming_reader.i: src/utils/streaming_reader.cpp.i
@@ -389,8 +286,7 @@ src/utils/streaming_reader.i: src/utils/streaming_reader.cpp.i
 
 # target to preprocess a source file
 src/utils/streaming_reader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/utils/streaming_reader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/streaming_reader.cpp.i
 .PHONY : src/utils/streaming_reader.cpp.i
 
 src/utils/streaming_reader.s: src/utils/streaming_reader.cpp.s
@@ -398,8 +294,7 @@ src/utils/streaming_reader.s: src/utils/streaming_reader.cpp.s
 
 # target to generate assembly for a file
 src/utils/streaming_reader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/streaming_reader.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/utils/streaming_reader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/streaming_reader.cpp.s
 .PHONY : src/utils/streaming_reader.cpp.s
 
 src/utils/thread_safe_queue.o: src/utils/thread_safe_queue.cpp.o
@@ -407,8 +302,7 @@ src/utils/thread_safe_queue.o: src/utils/thread_safe_queue.cpp.o
 
 # target to build an object file
 src/utils/thread_safe_queue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/utils/thread_safe_queue.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/thread_safe_queue.cpp.o
 .PHONY : src/utils/thread_safe_queue.cpp.o
 
 src/utils/thread_safe_queue.i: src/utils/thread_safe_queue.cpp.i
@@ -416,8 +310,7 @@ src/utils/thread_safe_queue.i: src/utils/thread_safe_queue.cpp.i
 
 # target to preprocess a source file
 src/utils/thread_safe_queue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/utils/thread_safe_queue.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/thread_safe_queue.cpp.i
 .PHONY : src/utils/thread_safe_queue.cpp.i
 
 src/utils/thread_safe_queue.s: src/utils/thread_safe_queue.cpp.s
@@ -425,129 +318,8 @@ src/utils/thread_safe_queue.s: src/utils/thread_safe_queue.cpp.s
 
 # target to generate assembly for a file
 src/utils/thread_safe_queue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer.dir/build.make CMakeFiles/log-analyzer.dir/src/utils/thread_safe_queue.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/src/utils/thread_safe_queue.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loganalyze.dir/build.make CMakeFiles/loganalyze.dir/src/utils/thread_safe_queue.cpp.s
 .PHONY : src/utils/thread_safe_queue.cpp.s
-
-tests/test_histogram.o: tests/test_histogram.cpp.o
-.PHONY : tests/test_histogram.o
-
-# target to build an object file
-tests/test_histogram.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_histogram.cpp.o
-.PHONY : tests/test_histogram.cpp.o
-
-tests/test_histogram.i: tests/test_histogram.cpp.i
-.PHONY : tests/test_histogram.i
-
-# target to preprocess a source file
-tests/test_histogram.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_histogram.cpp.i
-.PHONY : tests/test_histogram.cpp.i
-
-tests/test_histogram.s: tests/test_histogram.cpp.s
-.PHONY : tests/test_histogram.s
-
-# target to generate assembly for a file
-tests/test_histogram.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_histogram.cpp.s
-.PHONY : tests/test_histogram.cpp.s
-
-tests/test_main.o: tests/test_main.cpp.o
-.PHONY : tests/test_main.o
-
-# target to build an object file
-tests/test_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_main.cpp.o
-.PHONY : tests/test_main.cpp.o
-
-tests/test_main.i: tests/test_main.cpp.i
-.PHONY : tests/test_main.i
-
-# target to preprocess a source file
-tests/test_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_main.cpp.i
-.PHONY : tests/test_main.cpp.i
-
-tests/test_main.s: tests/test_main.cpp.s
-.PHONY : tests/test_main.s
-
-# target to generate assembly for a file
-tests/test_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_main.cpp.s
-.PHONY : tests/test_main.cpp.s
-
-tests/test_parser.o: tests/test_parser.cpp.o
-.PHONY : tests/test_parser.o
-
-# target to build an object file
-tests/test_parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_parser.cpp.o
-.PHONY : tests/test_parser.cpp.o
-
-tests/test_parser.i: tests/test_parser.cpp.i
-.PHONY : tests/test_parser.i
-
-# target to preprocess a source file
-tests/test_parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_parser.cpp.i
-.PHONY : tests/test_parser.cpp.i
-
-tests/test_parser.s: tests/test_parser.cpp.s
-.PHONY : tests/test_parser.s
-
-# target to generate assembly for a file
-tests/test_parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_parser.cpp.s
-.PHONY : tests/test_parser.cpp.s
-
-tests/test_streaming_reader.o: tests/test_streaming_reader.cpp.o
-.PHONY : tests/test_streaming_reader.o
-
-# target to build an object file
-tests/test_streaming_reader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_streaming_reader.cpp.o
-.PHONY : tests/test_streaming_reader.cpp.o
-
-tests/test_streaming_reader.i: tests/test_streaming_reader.cpp.i
-.PHONY : tests/test_streaming_reader.i
-
-# target to preprocess a source file
-tests/test_streaming_reader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_streaming_reader.cpp.i
-.PHONY : tests/test_streaming_reader.cpp.i
-
-tests/test_streaming_reader.s: tests/test_streaming_reader.cpp.s
-.PHONY : tests/test_streaming_reader.s
-
-# target to generate assembly for a file
-tests/test_streaming_reader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_streaming_reader.cpp.s
-.PHONY : tests/test_streaming_reader.cpp.s
-
-tests/test_thread_safe_queue.o: tests/test_thread_safe_queue.cpp.o
-.PHONY : tests/test_thread_safe_queue.o
-
-# target to build an object file
-tests/test_thread_safe_queue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_thread_safe_queue.cpp.o
-.PHONY : tests/test_thread_safe_queue.cpp.o
-
-tests/test_thread_safe_queue.i: tests/test_thread_safe_queue.cpp.i
-.PHONY : tests/test_thread_safe_queue.i
-
-# target to preprocess a source file
-tests/test_thread_safe_queue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_thread_safe_queue.cpp.i
-.PHONY : tests/test_thread_safe_queue.cpp.i
-
-tests/test_thread_safe_queue.s: tests/test_thread_safe_queue.cpp.s
-.PHONY : tests/test_thread_safe_queue.s
-
-# target to generate assembly for a file
-tests/test_thread_safe_queue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log-analyzer-tests.dir/build.make CMakeFiles/log-analyzer-tests.dir/tests/test_thread_safe_queue.cpp.s
-.PHONY : tests/test_thread_safe_queue.cpp.s
 
 # Help Target
 help:
@@ -556,18 +328,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... gmock"
-	@echo "... gmock_main"
-	@echo "... gtest"
-	@echo "... gtest_main"
-	@echo "... log-analyzer"
-	@echo "... log-analyzer-tests"
+	@echo "... loganalyze"
 	@echo "... apps/main.o"
 	@echo "... apps/main.i"
 	@echo "... apps/main.s"
@@ -580,6 +342,9 @@ help:
 	@echo "... src/parser/log_parser.o"
 	@echo "... src/parser/log_parser.i"
 	@echo "... src/parser/log_parser.s"
+	@echo "... src/utils/json_output.o"
+	@echo "... src/utils/json_output.i"
+	@echo "... src/utils/json_output.s"
 	@echo "... src/utils/memory_pool.o"
 	@echo "... src/utils/memory_pool.i"
 	@echo "... src/utils/memory_pool.s"
@@ -589,21 +354,6 @@ help:
 	@echo "... src/utils/thread_safe_queue.o"
 	@echo "... src/utils/thread_safe_queue.i"
 	@echo "... src/utils/thread_safe_queue.s"
-	@echo "... tests/test_histogram.o"
-	@echo "... tests/test_histogram.i"
-	@echo "... tests/test_histogram.s"
-	@echo "... tests/test_main.o"
-	@echo "... tests/test_main.i"
-	@echo "... tests/test_main.s"
-	@echo "... tests/test_parser.o"
-	@echo "... tests/test_parser.i"
-	@echo "... tests/test_parser.s"
-	@echo "... tests/test_streaming_reader.o"
-	@echo "... tests/test_streaming_reader.i"
-	@echo "... tests/test_streaming_reader.s"
-	@echo "... tests/test_thread_safe_queue.o"
-	@echo "... tests/test_thread_safe_queue.i"
-	@echo "... tests/test_thread_safe_queue.s"
 .PHONY : help
 
 

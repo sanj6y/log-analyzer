@@ -6,15 +6,27 @@
 namespace log_analyzer::utils {
 
 StreamingReader::StreamingReader(std::string_view filepath, std::size_t buffer_size)
-    : buffer_size_(buffer_size)
+    : input_stream_(nullptr)
+    , read_from_stdin_(false)
+    , buffer_size_(buffer_size)
     , buffer_(std::make_unique<char[]>(buffer_size_))
     , buffer_pos_(0)
     , buffer_used_(0)
     , total_bytes_read_(0)
 {
-    file_.open(std::string(filepath), std::ios::binary);
-    if (file_.is_open()) {
+    std::string path(filepath);
+    if (path == "-" || path.empty()) {
+        // Read from stdin
+        read_from_stdin_ = true;
+        input_stream_ = &std::cin;
         refill_buffer();
+    } else {
+        // Read from file
+        file_.open(path, std::ios::binary);
+        if (file_.is_open()) {
+            input_stream_ = &file_;
+            refill_buffer();
+        }
     }
 }
 
@@ -26,12 +38,21 @@ StreamingReader::~StreamingReader() {
 
 StreamingReader::StreamingReader(StreamingReader&& other) noexcept
     : file_(std::move(other.file_))
+    , input_stream_(other.input_stream_)
+    , read_from_stdin_(other.read_from_stdin_)
     , buffer_size_(other.buffer_size_)
     , buffer_(std::move(other.buffer_))
     , buffer_pos_(other.buffer_pos_)
     , buffer_used_(other.buffer_used_)
     , total_bytes_read_(other.total_bytes_read_)
 {
+    // Update input_stream_ pointer
+    if (read_from_stdin_) {
+        input_stream_ = &std::cin;
+    } else if (file_.is_open()) {
+        input_stream_ = &file_;
+    }
+    other.input_stream_ = nullptr;
 }
 
 StreamingReader& StreamingReader::operator=(StreamingReader&& other) noexcept {
@@ -50,11 +71,14 @@ StreamingReader& StreamingReader::operator=(StreamingReader&& other) noexcept {
 }
 
 bool StreamingReader::eof() const noexcept {
+    if (read_from_stdin_) {
+        return buffer_pos_ >= buffer_used_ && std::cin.eof();
+    }
     return !file_.is_open() || (buffer_pos_ >= buffer_used_ && file_.eof());
 }
 
 bool StreamingReader::refill_buffer() {
-    if (!file_.is_open() || file_.eof()) {
+    if (!input_stream_ || input_stream_->eof()) {
         return false;
     }
 
@@ -66,8 +90,8 @@ bool StreamingReader::refill_buffer() {
 
     // Read new data into buffer starting at remaining position
     std::size_t read_pos = remaining;
-    file_.read(buffer_.get() + read_pos, static_cast<std::streamsize>(buffer_size_ - read_pos));
-    std::streamsize bytes_read = file_.gcount();
+    input_stream_->read(buffer_.get() + read_pos, static_cast<std::streamsize>(buffer_size_ - read_pos));
+    std::streamsize bytes_read = input_stream_->gcount();
 
     buffer_pos_ = 0;
     buffer_used_ = remaining + static_cast<std::size_t>(bytes_read);

@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <fstream>
+#include <iostream>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -11,6 +12,7 @@ namespace log_analyzer::utils {
 /**
  * Streaming file reader for multi-GB log files.
  * Maintains constant memory footprint regardless of file size.
+ * Supports both file and stdin input (use "-" for stdin).
  */
 class StreamingReader {
 public:
@@ -31,9 +33,9 @@ public:
     [[nodiscard]] std::string_view next_line();
 
     /**
-     * Check if file is open and valid.
+     * Check if file is open and valid (or reading from stdin).
      */
-    [[nodiscard]] bool is_open() const noexcept { return file_.is_open(); }
+    [[nodiscard]] bool is_open() const noexcept { return file_.is_open() || read_from_stdin_; }
 
     /**
      * Check if EOF has been reached.
@@ -42,8 +44,14 @@ public:
 
     /**
      * Get current file position.
+     * Returns 0 for stdin (position tracking not available).
      */
-    [[nodiscard]] std::streampos tellg() { return file_.tellg(); }
+    [[nodiscard]] std::streampos tellg() { 
+        if (read_from_stdin_) {
+            return 0; // Position not available for stdin
+        }
+        return file_.tellg(); 
+    }
 
     /**
      * Get bytes read so far.
@@ -52,6 +60,8 @@ public:
 
 private:
     std::ifstream file_;
+    std::istream* input_stream_;  // Points to file_ or &std::cin
+    bool read_from_stdin_;
     std::size_t buffer_size_;
     std::unique_ptr<char[]> buffer_;
     std::size_t buffer_pos_;
