@@ -153,31 +153,6 @@ time ./build/loganalyze data/sample.log --threads 4 > /dev/null
 - **High Throughput:** Target 2GB/min single-threaded throughput
 - **Extensibility:** Support for custom log formats (Spectre, Xcelium, etc.)
 
-## Project Structure
-
-```
-log-analyzer/
-├── apps/               # Main entry point (CLI tool)
-│   └── main.cpp
-├── include/            # Header files (.hpp)
-│   ├── parser/         # Zero-copy string_view parsing
-│   ├── analytics/      # Histograms and aggregations
-│   └── utils/          # File I/O and threading helpers
-├── src/                # Implementation files (.cpp)
-│   ├── parser/
-│   ├── analytics/
-│   └── utils/
-├── tests/              # Unit tests (GoogleTest) - Part 4.1/4.2
-├── data/               # Sample log files for testing
-└── CMakeLists.txt      # Build system
-```
-
-## Roadmap
-
-- Part 1: Core streaming engine and basic `string_view` parser
-- Part 2: Aggregator engine (Error/Warning frequency, Time-window analysis)
-- Part 3: Multi-threading with `std::jthread` and thread-safe queues
-- Part 4: Integration of GoogleTest for unit testing (IN PROGRESS)
 
 ## Installation
 
